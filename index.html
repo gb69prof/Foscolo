@@ -1,14 +1,22 @@
-<!DOCTYPE html><html lang="it"><head><title>Foscolo — Home</title>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <title>Foscolo — Home</title>
+  
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
-</head><body>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <meta name="description" content="Edizione editoriale del testo da 'Foscolo ridotto': tipografia curata, paragrafi ricostruiti e navigazione comoda.">
+</head>
+<body>
+  
 <nav class="nav">
   <div class="inner">
     <div class="brand"><a href="index.html">Foscolo — Sito</a></div>
-    <div style="display:flex;gap:12px;margin-left:auto">
+    <div style="margin-left:auto; display:flex; gap:12px;">
       <a href="index.html">Home</a>
       <a href="lettura.html">PDF</a>
       <a href="testo.html">Testo</a>
@@ -17,8 +25,28 @@
   </div>
 </nav>
 
-<div class="container hero"><div><h1>Ugo Foscolo — risorse e testo</h1><p>Versione web del PDF <strong>Foscolo ridotto</strong>. Pubblicabile su GitHub Pages e incorporabile in Google Sites.</p>
-<p><a class="card" href="lettura.html" style="display:inline-block;padding:10px 14px;margin-right:8px">Apri il PDF con immagini</a>
-<a class="card" href="testo.html" style="display:inline-block;padding:10px 14px">Leggi il testo estratto</a></p></div>
-<div class="card"><h2>Cosa include</h2><ul><li>Embed del PDF originale</li><li>Testo estratto per pagina con sommario</li><li>Stile responsive</li></ul><p><a href="assets/Foscolo_ridotto.pdf" download>Scarica il PDF</a></p></div></div>
-<footer>© 2025 — Sito creato con Libera</footer></body></html>
+  <div class="container hero">
+    <div class="paper">
+      <h1>Ugo Foscolo — edizione editoriale</h1>
+      <p>Questa versione rielabora il PDF <em>Foscolo ridotto</em> per offrire una lettura pulita: righe ricomposte in paragrafi, titoli riconosciuti, virgolette tipografiche e impaginazione a due colonne sugli schermi ampi.</p>
+      <p>
+        <a class="btn" href="testo.html">Leggi il Testo</a>
+        &nbsp; <a class="btn" href="lettura.html">Apri il PDF</a>
+      </p>
+      <small class="muted">Suggerimento: per la stampa usa il comando del browser; è presente uno stile dedicato.</small>
+    </div>
+  </div>
+  <div class="container">
+    <div class="paper">
+      <h2>Cosa cambia rispetto alla versione base</h2>
+      <ul>
+        <li>Ricostruzione dei paragrafi e rimozione delle spezzature di riga</li>
+        <li>Riconoscimento automatico dei titoli in maiuscolo</li>
+        <li>Virgolette tipografiche (« ») e apostrofo corretto (’)</li>
+        <li>Layout editoriale, giustificato, con due colonne su schermi larghi</li>
+        <li>Stile di stampa</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
