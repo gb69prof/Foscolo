@@ -10,16 +10,13 @@ function isLikelyHeading(line) {
 }
 
 function tidyQuotes(s) {
-  // apostrofo tipografico + puntini di sospensione
   return s
     .replace(/(\w)'(\w)/g, '$1’$2')
     .replace(/\.{3}/g, '…');
 }
 
 function rebuildParagraphs(section) {
-  // Prende tutte le <p> “linea” presenti in .page e le unisce in veri paragrafi
   const lines = Array.from(section.querySelectorAll('p')).map(p => p.textContent.trim());
-
   const out = [];
   let buf = '';
 
@@ -31,20 +28,14 @@ function rebuildParagraphs(section) {
 
   for (let i = 0; i < lines.length; i++) {
     const L = lines[i];
-
-    // vuoto = fine paragrafo
     if (!L) { flush(); continue; }
-
-    // titoletti in maiuscolo → chiudi paragrafo e aggiungi <h3>
     if (isLikelyHeading(L)) {
       flush();
       out.push(`<h3>${L}</h3>`);
       continue;
     }
-
-    // unisci righe: gestisci sillabazione a fine riga
     if (buf.endsWith('-')) {
-      buf = buf.replace(/-\s*$/, '') + L;      // de-sillabazione
+      buf = buf.replace(/-\s*$/, '') + L;
     } else if (buf) {
       buf += ' ' + L;
     } else {
@@ -52,9 +43,6 @@ function rebuildParagraphs(section) {
     }
   }
   flush();
-
-  // sostituisci il contenuto della sezione conservando l’ID/titolo
-  // salvo il titolo “Pagina X” se presente
   const title = section.querySelector('h2')?.outerHTML || '';
   section.innerHTML = title + out.join('\n');
 }
@@ -63,5 +51,3 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('section.page').forEach(rebuildParagraphs);
   console.log('Fix PDF lines: paragraphs rebuilt.');
 });
-
-// (Lightbox gallery resta intatto se c’era…)

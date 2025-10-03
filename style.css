@@ -1,46 +1,4 @@
 
-:root{
-  --bg:#0e1116; --paper:#0f1522; --ink:#e7e7e7; --muted:#a9b0bc; --accent:#8ab4ff; --rule:#ffffff22;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{background:var(--bg); color:var(--ink)}
-/* Editorial type */
-body, p{font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif; font-size:18px; line-height:1.8}
-h1,h2,h3{font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; line-height:1.25}
-.container{max-width:980px;margin:0 auto;padding:24px}
-.nav{position:sticky;top:0;z-index:40;background:rgba(14,17,22,.72);backdrop-filter: blur(8px);border-bottom:1px solid var(--rule)}
-.nav .inner{display:flex;align-items:center;gap:16px;padding:12px 20px}
-.nav a{color:var(--ink);text-decoration:none;opacity:.9}
-.nav a:hover{opacity:1;text-decoration:underline}
-.brand{font-weight:700;letter-spacing:.3px}
-.hero{padding:32px 0}
-.paper{background:linear-gradient(180deg,#0e1524,#0e1420);border:1px solid var(--rule);border-radius:14px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
-.grid{display:grid;gap:18px}
-.grid-2{grid-template-columns:280px 1fr}
-@media (max-width:900px){.grid-2{grid-template-columns:1fr}}
-.toc{position:sticky;top:68px;max-height:calc(100vh - 88px);overflow:auto;padding-right:6px}
-.toc a{color:var(--accent);text-decoration:none}
-.toc a:hover{text-decoration:underline}
-.page section{margin:26px 0}
-.page p{text-align:justify; hyphens:auto}
-/* Two-column reading for wide screens */
-@media (min-width:1100px){
-  .page{column-count:2; column-gap:48px}
-  .page section{break-inside:avoid}
-}
-blockquote{margin:16px 0; padding:2px 14px; border-left:3px solid var(--rule); color:var(--muted)}
-small.muted{color:var(--muted)}
-.btn{display:inline-block;padding:10px 14px;border:1px solid var(--rule);border-radius:10px;color:#fff;text-decoration:none;background:#ffffff10}
-.btn:hover{background:#ffffff18}
-.pdf-embed{width:100%;height:82vh;border:1px solid var(--rule);border-radius:14px;background:#0b1220}
-/* Print */
-@media print{
-  body{background:#fff;color:#000}
-  .nav{display:none}
-  .container{max-width:100%;padding:0}
-  .page{column-count:2; column-gap:24px}
-}
 /* Impaginazione testo editoriale */
 section.page { column-gap: 2.2rem; }
 @media (min-width: 1100px) { section.page { column-count: 2; } }
